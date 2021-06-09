@@ -14,6 +14,5 @@ Hoe push je?
 5. Als laatste gaan we pushen. Dit doen we met deze line: git push origin <branch naam>. In ons geval zou de branch naam main of dev zijn
 
 Dit was het!
-Yessir
 
 Download git via: https://git-scm.com/
