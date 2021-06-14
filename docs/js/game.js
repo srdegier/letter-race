@@ -1,4 +1,4 @@
-import { Board } from "./board.js";
+
 class Game {
     constructor() {
         console.log("Game was created!");

@@ -1,3 +1,40 @@
 body {
-    background-color: aliceblue;
+    background-color: rgb(106, 180, 21);
 }
+
+#start {
+    text-align: center;
+}
+
+#finish {
+    text-align: center;
+}
+
+.tile {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-color: red;
+    border-style: solid;
+    border-width: 2px;
+    margin: 5px;
+}
+
+.board {
+    margin: auto;
+    width: fit-content;
+    margin-top: 80px;
+}
+
+.horizontal {
+    display: inline-flex;
+}
+
+.vertical {
+    display: inline-grid;
+}
+
+.edge {
+    display: block!important;
+}
+
