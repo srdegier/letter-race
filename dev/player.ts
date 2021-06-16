@@ -1,4 +1,4 @@
-import { Question } from "./Question.js"
+import { Question } from "./question.js"
 
 export class Player  { 
 
@@ -13,7 +13,7 @@ export class Player  {
     constructor(name: string, turn: boolean) {
         this.name = name
         this.turn = turn
-        this.question = new Question()
+        this.question = new Question(this)
         this.create()
     }
 
@@ -29,11 +29,6 @@ export class Player  {
     }
 
     move(dice: number) {
-        // console.log(dice);
-        // set old position
-        // console.log(this.previousTile);
-        // set new position
-        console.log(this.previousTile)
         this.currentTile = dice;
         for (let i = 0; i < dice; i++) {
             setTimeout(() => {
@@ -45,7 +40,5 @@ export class Player  {
                 }
             }, i * 500);            
         }
-        //console.log('eh');
-        //this.previousTile = this.currentTile
     }
 }
