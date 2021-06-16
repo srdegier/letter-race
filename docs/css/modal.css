@@ -14,13 +14,68 @@
   
   /* Modal Content */
   .modal-content {
-    background-color: #fefefe;
+    background-color: white;
     margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
     width: 30%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    border-top: 20px;
+    border-bottom: 20px;
+  }
+
+  /* Question */
+  #question {
+    letter-spacing: 10px;
   }
   
+  /* img */
+  #img {
+    width: 50%;
+    /* border-style: solid;
+    border-color: blue; */
+  }
+
+  
+  /* Answers */
+  #answers {
+    display: flex;
+    justify-content: space-around;
+    border: solid;
+    border-width: 5px;
+    border-color: blue;
+    margin: 10px;
+    border-radius: 30px;
+  }
+  /* Anwser */
+  .answer {
+    border-radius: 30px;
+    background-color: yellow;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  #modal-header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    border: solid;
+    border-width: 5px;
+    border-color: blue;
+    margin: 10px;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px
+  }
   /* The Close Button */
   .close {
     color: #aaaaaa;
