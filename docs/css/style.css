@@ -1,6 +1,6 @@
 body {
     background-color: rgb(106, 180, 21);
-    background-image: url(images/wolk.png);
+    background-image: url(../images/wolk.png);
     /* z-index: 1; */
     overflow-y: scroll;
     /* background-image: url(../images/logo.png); */
