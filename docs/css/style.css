@@ -1,6 +1,6 @@
 body {
-    background-color: rgb(106, 180, 21);
-    background-image: url(../images/wolk.png);
+    background-color: #FFE599;
+    /* background-image: url(../images/wolk.png); */
     background-size: cover;
     /* z-index: 1; */
     overflow-y: scroll;
@@ -47,7 +47,7 @@ player {
     margin: auto;
     width: fit-content;
     margin-top: 80px;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 .horizontal {
@@ -56,4 +56,13 @@ player {
 
 .vertical {
     display: inline-grid;
+}
+
+.imageOne { /* Toegevoegd om de eerste boom te plaatsen rechtsbovenin*/
+    position: absolute;
+    height: 325px;
+    width: 325px;
+    top: 175px;
+    left: 60%;
+    z-index: 1;
 }
