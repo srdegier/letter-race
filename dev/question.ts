@@ -48,30 +48,68 @@ export class Question  {
 
     // get a question
     create() {
+        //clean the modal
+        this.cleanModal()
         this.chosenQ = Math.floor(Math.random() * 2);
         let question = this.questions[this.chosenQ]
         var showQuestion = question.wholeAnswer.replace(question.solution,'?');
         // insert question
-        document.getElementById("question")?.innerText = showQuestion
+        document.getElementById("question")?.innerText = showQuestion;
         
         // insert modal
         document.getElementById("myModal").style.display = "block";
     }
 
+    cleanModal() {
+        // remove "correct"/"wrong" answer class html
+        const modal = document.getElementById('modal');
+        modal?.classList.remove('correct')
+        modal?.classList.remove('incorrect')
+        
+        const questionText = document.getElementById('question');
+        questionText?.classList.remove('visible');
+
+        const message = document.getElementById('message');
+        message?.classList.remove('visible');
+
+        const answerDivs = [...document.querySelectorAll(".answer")];
+        answerDivs.forEach((answerDiv) => {
+            answerDiv.classList.remove('invisible')
+        });
+
+    }
+
     checkAnswer(e:any) {
-        console.log(e.target.innerText);
         let givenAnswer = e.target.innerText
+
         const question = this.questions[this.chosenQ]
-        if(givenAnswer == question.solution){
-            console.log('Goed!')
-            // show postive modal
-            
+
+        // remove questions
+        const answerDivs = [...document.querySelectorAll(".answer")];
+        answerDivs.forEach((answerDiv) => {
+            answerDiv.classList.add('invisible')
+        });
+
+        // make message visible
+        const message = document.getElementById('message');
+        message.className = 'visible';
+
+        // modal
+        const modal = document.getElementById('modal');
+        const messageStatus = question.wholeAnswer.replace(question.solution, givenAnswer.toLowerCase());
+        const questionText = document.getElementById('question');
+        questionText?.innerText = messageStatus
+        if(givenAnswer.toLowerCase() == question.solution){
+            message?.innerText = `Het is een ${messageStatus}!`
+            modal?.classList.add('correct');
         } else {
             // show negative modal
-            console.log('Fout')
+            modal?.classList.add('incorrect');
+            message?.innerText = `Het is geen ${messageStatus}!`
         }
+        
         // remove modal
-        this.timeout(2000).then(() => {
+        this.timeout(4000).then(() => {
             // move
             document.getElementById("myModal").style.display = "none";
         });
