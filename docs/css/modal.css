@@ -16,7 +16,7 @@
   .modal-content {
     background-color: white;
     margin: auto;
-    width: 30%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -32,15 +32,8 @@
   /* Question */
   #question {
     letter-spacing: 10px;
+    text-transform: uppercase;
   }
-  
-  /* img */
-  #img {
-    width: 50%;
-    /* border-style: solid;
-    border-color: blue; */
-  }
-
   
   /* Answers */
   #answers {
@@ -88,6 +81,11 @@
   .incorrect {
     background-color: red!important;
   }
+
+  #question-image {
+    width: 200px;
+    margin-bottom: 20px;
+  }
   
   #modal-header {
     display: flex;
@@ -101,7 +99,9 @@
     margin: 10px;
     border-radius: 30px;
     margin-top: 20px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    width: 90%;
+    background-color: white;
   }
   /* The Close Button */
   .close {

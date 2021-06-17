@@ -7,7 +7,7 @@ export class Question  {
     player: Player
     questions: object = [
         {
-            "image" : "",
+            "image" : "./images/Tree.png",
             "solution": "oo",
             "question": "bm", // not needed
             "wholeAnswer": "boom",
@@ -18,7 +18,7 @@ export class Question  {
             ]
         },
         {
-            "image" : "",
+            "image" : "./images/moon-art.png",
             "solution": "aa",
             "question": "mn",
             "wholeAnswer": "maan",
@@ -55,6 +55,8 @@ export class Question  {
         var showQuestion = question.wholeAnswer.replace(question.solution,'?');
         // insert question
         document.getElementById("question")?.innerText = showQuestion;
+
+        document.getElementById("question-image").src = question.image;
         
         // insert modal
         document.getElementById("myModal").style.display = "block";
