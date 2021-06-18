@@ -118,12 +118,15 @@ export class Question  {
         const messageStatus = question.wholeAnswer.replace(question.solution, givenAnswer.toLowerCase());
         const questionText = document.getElementById('question');
         questionText?.innerText = messageStatus
+        let answerCheck = true
         if(givenAnswer.toLowerCase() == question.solution){
+            
             message?.innerText = `Het is een ${messageStatus}!`
             modal?.classList.add('correct');
             console.log(this.player);
         } else {
             // show negative modal
+            answerCheck = false
             modal?.classList.add('incorrect');
             message?.innerText = `Het is geen ${messageStatus}!`
         }
@@ -135,7 +138,10 @@ export class Question  {
 
             // move 2 extra or not
             // console.log(this.player)
-            this.player.move(2, true)
+            if(answerCheck){
+                this.player.move(2, true)
+            }
+            
             this.player.setTurn()
         });
     }
