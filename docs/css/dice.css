@@ -169,6 +169,7 @@
   }
   
   button {
+    font-family: 'Patrick Hand', cursive;
     align-self: center;
     background-color: #efefef;
     border: none;

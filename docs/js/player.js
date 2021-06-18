@@ -1,11 +1,11 @@
-import { Question } from "./Question.js";
+import { Question } from "./question.js";
 export class Player {
     constructor(name, turn) {
         this.previousTile = 0;
         this.currentTile = 0;
         this.name = name;
         this.turn = turn;
-        this.question = new Question();
+        this.question = new Question(this);
         this.create();
     }
     create() {
@@ -18,7 +18,6 @@ export class Player {
         return x[position];
     }
     move(dice) {
-        console.log(this.previousTile);
         this.currentTile = dice;
         for (let i = 0; i < dice; i++) {
             setTimeout(() => {
