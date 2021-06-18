@@ -29,24 +29,30 @@ class Game {
     timeout(ms: any) { //pass a time in milliseconds to this function
         return new Promise(resolve => setTimeout(resolve, ms));
     }
+    
 
     nextTurn() {
-        // determine who's turn
-        if (this.player[0].turn) {
-            console.log('p1 turn')
-            let diceValue = this.dice.rollDice()
 
-            this.timeout(2000).then(() => {
-                // move
-                this.player[0].move(diceValue)
-            });
-            
-            // move and opdracht
+        let pTurn = 0;
+        (this.player[0].turn ? pTurn = 0 : pTurn = 1)
 
 
-        } else {
-            console.log('p2 turn')
-        }
+        const diceValue = this.dice.rollDice()
+
+        this.timeout(2000).then(() => {
+            // move
+            console.log('Player dice');
+            this.player[pTurn].move(diceValue, false)
+        });
+        
+
+        // change turn players
+        // if(this.player[0].turn == false) {
+        //     this.player[1].turn = true;
+        // } else {
+        //     this.player[0].turn = true;
+        //     this.player[1].turn = false;
+        // }
         // requestAnimationFrame(() => this.gameLoop())
     }
 }

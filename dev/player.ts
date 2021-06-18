@@ -17,6 +17,10 @@ export class Player  {
         this.create()
     }
 
+    setTurn() : void {
+        this.turn = false
+    }
+
     private create() {
         this.div = document.createElement("player")
         this.div.style.filter = `hue-rotate(${Math.random() * 360}deg)`; // zijn soms hetzelfde
@@ -28,7 +32,8 @@ export class Player  {
         return x[position]
     }
 
-    move(dice: number) {
+    move(dice: any, notByDice: boolean) {
+        console.log('Test');
         this.currentTile = dice;
         for (let i = 0; i < dice; i++) {
             setTimeout(() => {
@@ -36,9 +41,12 @@ export class Player  {
                 if(this.currentTile == (i+1)) {
                     this.previousTile = this.previousTile + this.currentTile;
                     // get the question modal with corresponding question
-                    this.question.create()
+                    if(notByDice == false) {
+                        this.question.create()
+                    }
                 }
             }, i * 500);            
         }
     }
+    
 }

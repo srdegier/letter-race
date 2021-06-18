@@ -32,14 +32,19 @@ export class Question  {
 
     constructor(player: Player) {
         this.player = player
-        console.log('question');
-        //document.querySelector('.answer')?.addEventListener("click", this.checkAnswer.bind(this));
         document.querySelectorAll('.answer').forEach(item => {
             item.addEventListener('click', event => {
               //handle click
-              this.checkAnswer(event)
+              // programma weet niet meer welke speler aan de beurt is
+              console.log(this.player);
+              if(this.player.turn == true) {
+                // ja ik weet grootste poep oplossing ooit
+                this.checkAnswer(event)
+              } else {
+                  this.player.turn = true;
+              }
             })
-          })
+        })
     }
 
     timeout(ms: any) { //pass a time in milliseconds to this function
@@ -82,6 +87,7 @@ export class Question  {
     }
 
     checkAnswer(e:any) {
+        console.log('checkAnswer');
         let givenAnswer = e.target.innerText
 
         const question = this.questions[this.chosenQ]
@@ -104,6 +110,7 @@ export class Question  {
         if(givenAnswer.toLowerCase() == question.solution){
             message?.innerText = `Het is een ${messageStatus}!`
             modal?.classList.add('correct');
+            console.log(this.player);
         } else {
             // show negative modal
             modal?.classList.add('incorrect');
@@ -114,6 +121,11 @@ export class Question  {
         this.timeout(4000).then(() => {
             // move
             document.getElementById("myModal").style.display = "none";
+
+            // move 2 extra or not
+            // console.log(this.player)
+            this.player.move(2, true)
+            this.player.setTurn()
         });
     }
 }
