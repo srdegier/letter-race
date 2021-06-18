@@ -7,7 +7,7 @@ export class Question  {
     player: Player
     questions: object = [
         {
-            "image" : "./images/Tree.png",
+            "image" : "./images/boom.png",
             "solution": "oo",
             "question": "bm", // not needed
             "wholeAnswer": "boom",
@@ -18,7 +18,7 @@ export class Question  {
             ]
         },
         {
-            "image" : "./images/moon-art.png",
+            "image" : "./images/maan.png",
             "solution": "aa",
             "question": "mn",
             "wholeAnswer": "maan",
