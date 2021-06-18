@@ -169,10 +169,9 @@
   }
   
   button {
+    border-radius: 5px;
     font-family: 'Patrick Hand', cursive;
     align-self: center;
-    background-color: #efefef;
-    border: none;
     color: #333;
     font-size: 1.25rem;
     font-weight: 700;

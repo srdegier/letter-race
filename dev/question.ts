@@ -27,6 +27,17 @@ export class Question  {
                 "aa",
                 "ee"
             ]
+        },
+        {
+            "image" : "./images/sok.png",
+            "solution": "o",
+            "question": "sk", // not needed
+            "wholeAnswer": "sok",
+            "answers": [
+                "e",
+                "a",
+                "i"
+            ]
         }
     ]
 
@@ -55,7 +66,7 @@ export class Question  {
     create() {
         //clean the modal
         this.cleanModal()
-        this.chosenQ = Math.floor(Math.random() * 2);
+        this.chosenQ = Math.floor(Math.random() * 3);
         let question = this.questions[this.chosenQ]
         var showQuestion = question.wholeAnswer.replace(question.solution,'?');
         // insert question
