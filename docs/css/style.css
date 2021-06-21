@@ -82,3 +82,37 @@ player {
     left: 25px;
     z-index: 1;
 }
+/*container voor de start pagina*/
+#startContainer{
+    margin: 0;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/*image from the start page*/
+#startImage{
+    width: 900px;
+}
+
+/*Button voor het startscherm*/
+#startButton{
+    cursor: pointer;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 60px;
+    vertical-align: middle;
+    text-align: center;
+    margin: auto;
+    width: 350px;
+    height: 100px;
+    background-color: #e7a57e;
+    border-color: #4B3B40;
+    margin: 0;
+    position: absolute;
+    top: 140%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
