@@ -33,6 +33,7 @@
   #question {
     letter-spacing: 10px;
     text-transform: uppercase;
+    padding: 20px;
   }
   
   /* Answers */
