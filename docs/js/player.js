@@ -3,6 +3,7 @@ export class Player {
     constructor(name, turn) {
         this.previousTile = 0;
         this.currentTile = 0;
+        this.winCheck = false;
         this.name = name;
         this.turn = turn;
         this.question = new Question(this);
@@ -21,19 +22,37 @@ export class Player {
         return x[position];
     }
     move(dice, notByDice) {
-        console.log('Test');
         this.currentTile = dice;
-        for (let i = 0; i < dice; i++) {
+        const totalTiles = document.getElementsByClassName("tile").length;
+        if ((this.previousTile + dice) >= (totalTiles - 1)) {
+            console.log('New dice roll because to high.');
+            let newValue = (this.previousTile + dice) - (totalTiles - 1);
+            this.currentTile = (dice) - newValue;
+        }
+        for (let i = 0; i < this.currentTile; i++) {
             setTimeout(() => {
                 this.getTile((this.previousTile + 1) + i).appendChild(this.div);
                 if (this.currentTile == (i + 1)) {
                     this.previousTile = this.previousTile + this.currentTile;
-                    if (notByDice == false) {
+                    if ((totalTiles - 1) == this.previousTile) {
+                        console.log(`${this.name} goed gedaan mijn jongggeenn`);
+                        this.winCheck = true;
+                        this.showWinModal();
+                    }
+                    else if (notByDice == false) {
+                        console.log(this.winCheck);
                         this.question.create();
+                    }
+                    else {
+                        console.log('bruh');
                     }
                 }
             }, i * 500);
         }
+    }
+    showWinModal() {
+        document.getElementById("myModal2").style.display = "block";
+        console.log('displaying finish modal');
     }
 }
 //# sourceMappingURL=player.js.map

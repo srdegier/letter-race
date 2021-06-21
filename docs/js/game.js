@@ -10,8 +10,8 @@ class Game {
         this.create();
     }
     create() {
-        this.player.push(new Player("p1", true));
-        this.player.push(new Player("p2", false));
+        this.player.push(new Player("Speler 1", true));
+        this.player.push(new Player("Speler 2", false));
     }
     timeout(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));

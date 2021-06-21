@@ -7,7 +7,7 @@ export class Player  {
     turn: boolean
     previousTile: number = 0
     currentTile: number = 0
-
+    winCheck: boolean = false
     question: Question
 
     constructor(name: string, turn: boolean) {
@@ -33,20 +33,39 @@ export class Player  {
     }
 
     move(dice: any, notByDice: boolean) {
-        console.log('Test');
         this.currentTile = dice;
-        for (let i = 0; i < dice; i++) {
+        const totalTiles = document.getElementsByClassName("tile").length
+ 
+        if ((this.previousTile + dice) >= (totalTiles - 1)) {
+            console.log('New dice roll because to high.')
+            let newValue = (this.previousTile + dice) - (totalTiles - 1);
+            this.currentTile = (dice) - newValue;
+        }
+ 
+        for (let i = 0; i < this.currentTile; i++) {
             setTimeout(() => {
                 this.getTile((this.previousTile + 1) + i).appendChild(this.div)
                 if(this.currentTile == (i+1)) {
                     this.previousTile = this.previousTile + this.currentTile;
-                    // get the question modal with corresponding question
-                    if(notByDice == false) {
+ 
+                    if ((totalTiles - 1) == this.previousTile) {
+                        console.log(`${this.name} goed gedaan mijn jongggeenn`);
+                        this.winCheck = true;                        
+                        this.showWinModal()
+                    } else if (notByDice == false) {
+                        console.log(this.winCheck)
                         this.question.create()
+                    } else {
+                       console.log('bruh'); 
                     }
+ 
                 }
             }, i * 500);            
         }
     }
-    
+    showWinModal() {
+        document.getElementById("myModal2").style.display = "block";
+        // document.getElementById("question")?.innerText = `${this.name} heeft gewonnen!`;
+        console.log('displaying finish modal');
+    }
 }
