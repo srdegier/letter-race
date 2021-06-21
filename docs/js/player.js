@@ -8,6 +8,9 @@ export class Player {
         this.question = new Question(this);
         this.create();
     }
+    setTurn() {
+        this.turn = false;
+    }
     create() {
         this.div = document.createElement("player");
         this.div.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
@@ -17,14 +20,17 @@ export class Player {
         var x = document.getElementsByClassName("tile");
         return x[position];
     }
-    move(dice) {
+    move(dice, notByDice) {
+        console.log('Test');
         this.currentTile = dice;
         for (let i = 0; i < dice; i++) {
             setTimeout(() => {
                 this.getTile((this.previousTile + 1) + i).appendChild(this.div);
                 if (this.currentTile == (i + 1)) {
                     this.previousTile = this.previousTile + this.currentTile;
-                    this.question.create();
+                    if (notByDice == false) {
+                        this.question.create();
+                    }
                 }
             }, i * 500);
         }

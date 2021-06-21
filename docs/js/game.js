@@ -17,16 +17,13 @@ class Game {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
     nextTurn() {
-        if (this.player[0].turn) {
-            console.log('p1 turn');
-            let diceValue = this.dice.rollDice();
-            this.timeout(2000).then(() => {
-                this.player[0].move(diceValue);
-            });
-        }
-        else {
-            console.log('p2 turn');
-        }
+        let pTurn = 0;
+        (this.player[0].turn ? pTurn = 0 : pTurn = 1);
+        const diceValue = this.dice.rollDice();
+        this.timeout(2000).then(() => {
+            console.log('Player dice');
+            this.player[pTurn].move(diceValue, false);
+        });
     }
 }
 new Game();
