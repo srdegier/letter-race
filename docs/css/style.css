@@ -65,11 +65,20 @@ player {
     display: inline-grid;
 }
 
-.imageOne { /* Toegevoegd om de eerste boom te plaatsen rechtsbovenin*/
+.boom { /* Toegevoegd om de eerste boom te plaatsen, rechts bovenin*/
     position: absolute;
     height: 325px;
     width: 325px;
     top: 175px;
-    left: 60%;
+    right: 75px;
+    z-index: 2;
+}
+
+.grot { /* Toegevoegd om de grot te plaatsen, links onderin*/
+    position: absolute;
+    height: 400px;
+    width: 600px;
+    bottom: 275px;
+    left: 25px;
     z-index: 1;
 }
