@@ -31,11 +31,11 @@ export class Question  {
         {
             "image" : "./images/sok.png",
             "solution": "o",
-            "question": "sk", // not needed
+            "question": "sk", 
             "wholeAnswer": "sok",
             "answers": [
                 "e",
-                "a",
+                "o",
                 "i"
             ]
         },
@@ -98,6 +98,13 @@ export class Question  {
         
         // insert modal
         document.getElementById("myModal").style.display = "block";
+
+        // insert answers
+        const answerDivs = [...document.querySelectorAll(".answer")];
+        for (const [index, answer] of answerDivs.entries()) {
+            answer.innerHTML = question.answers[index]
+            console.log(question.answers[index])
+        }
     }
 
     cleanModal() {
