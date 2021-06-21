@@ -33,6 +33,8 @@ player {
     text-align: center;
 }
 
+
+
 .number{
     margin-left: 6px;
     text-align: center;
@@ -48,6 +50,10 @@ player {
     margin: 5px;
     border-radius: 5px;
     /* z-index: 1; */
+}
+#finishBg{
+    background-image: url(../images/finish.png);
+    background-size: cover;
 }
 
 .board {
