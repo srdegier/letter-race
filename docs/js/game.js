@@ -24,8 +24,6 @@ class Game {
         this.timeout(2000).then(() => {
             console.log('Player dice');
             this.player[pTurn].move(diceValue, false);
-            const victorySound = new Audio('./sounds/safari_theme.mp3');
-            victorySound.play();
         });
     }
 }
