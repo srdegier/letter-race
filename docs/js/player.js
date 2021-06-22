@@ -50,6 +50,7 @@ export class Player {
             }, i * 500);
         }
     }
+    // Plays sound if player wins
     showWinModal() {
         const victorySound = new Audio('./sounds/victory.mp3');
         victorySound.play();

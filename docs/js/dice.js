@@ -3,6 +3,7 @@ export class Dice {
         console.log("dice");
     }
     rollDice() {
+        // Plays sound if dice is rolled
         const diceSound = new Audio('./sounds/dice.mp3');
         diceSound.play();
         const dice = [...document.querySelectorAll(".die-list")];
