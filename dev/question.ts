@@ -153,11 +153,16 @@ export class Question  {
             message?.innerText = `Het is een ${messageStatus}!`
             modal?.classList.add('correct');
             console.log(this.player);
+            // Plays sound if player gives a right answer
+            const rightAnswer = new Audio('./sounds/right_answer.mp3');
+            rightAnswer.play();
         } else {
             // show negative modal
             answerCheck = false
             modal?.classList.add('incorrect');
             message?.innerText = `Het is geen ${messageStatus}!`
+            const wrongAnswer = new Audio('./sounds/wrong_answer.mp3');
+            wrongAnswer.play();
         }
         
         // remove modal

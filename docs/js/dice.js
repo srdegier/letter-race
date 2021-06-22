@@ -3,14 +3,13 @@ export class Dice {
         console.log("dice");
     }
     rollDice() {
-        // Plays sound if dice is rolled
-        const diceSound = new Audio('./sounds/dice.mp3');
-        diceSound.play();
         const dice = [...document.querySelectorAll(".die-list")];
         let diceValue = this.getRandomNumber(1, 6);
         dice.forEach((die) => {
             this.toggleClasses(die);
             die.dataset.roll = diceValue;
+            const diceSound = new Audio('./sounds/dice.mp3');
+            diceSound.play();
         });
         return diceValue;
     }

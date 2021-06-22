@@ -12,6 +12,8 @@ export class Dice {
         dice.forEach((die) => {
             this.toggleClasses(die)
             die.dataset.roll = diceValue;
+            const diceSound = new Audio('./sounds/dice.mp3');
+            diceSound.play();
         });
 
         return diceValue;

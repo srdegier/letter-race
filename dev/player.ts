@@ -63,7 +63,10 @@ export class Player  {
             }, i * 500);            
         }
     }
-    showWinModal() {    
+    showWinModal() {  
+        const victorySound = new Audio('./sounds/victory.mp3');
+        victorySound.play();
+        
         document.getElementById("myModal2").style.display = "block";
         // document.getElementById("question")?.innerText = `${this.name} heeft gewonnen!`;
         console.log('displaying finish modal');
