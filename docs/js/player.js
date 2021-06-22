@@ -51,6 +51,8 @@ export class Player {
         }
     }
     showWinModal() {
+        const victorySound = new Audio('./sounds/victory.mp3');
+        victorySound.play();
         document.getElementById("myModal2").style.display = "block";
         console.log('displaying finish modal');
     }
