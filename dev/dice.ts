@@ -7,6 +7,7 @@ export class Dice {
     }
 
     public rollDice() : Number {
+        // sound roll dobbelsteen
         const dice = [...document.querySelectorAll(".die-list")];
         let diceValue = this.getRandomNumber(1, 6);
         dice.forEach((die) => {

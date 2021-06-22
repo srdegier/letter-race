@@ -63,9 +63,14 @@ export class Player  {
             }, i * 500);            
         }
     }
-    showWinModal() {
+    showWinModal() {    
+        var victorySound = new Audio('docs\sounds\victory.mp3');
+        console.log(`audio is ${victorySound}`);
+        victorySound.play();
+
         document.getElementById("myModal2").style.display = "block";
         // document.getElementById("question")?.innerText = `${this.name} heeft gewonnen!`;
         console.log('displaying finish modal');
+
     }
 }

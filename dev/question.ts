@@ -9,7 +9,7 @@ export class Question  {
         {
             "image" : "./images/boom.png",
             "solution": "oo",
-            "question": "bm", // not needed
+            "question": "bm",
             "wholeAnswer": "boom",
             "answers": [
                 "oo",
