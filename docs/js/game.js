@@ -1,6 +1,5 @@
 import { Dice } from "./dice.js";
 import { Player } from "./player.js";
-
 class Game {
     constructor() {
         var _a;

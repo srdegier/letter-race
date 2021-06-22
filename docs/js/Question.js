@@ -121,17 +121,11 @@ export class Question {
             message === null || message === void 0 ? void 0 : message.innerText = `Het is een ${messageStatus}!`;
             modal === null || modal === void 0 ? void 0 : modal.classList.add('correct');
             console.log(this.player);
-            // Plays sound if player gives a right answer
-            const rightAnswer = new Audio('./sounds/right_answer.mp3');
-            rightAnswer.play();
         }
         else {
             answerCheck = false;
             modal === null || modal === void 0 ? void 0 : modal.classList.add('incorrect');
             message === null || message === void 0 ? void 0 : message.innerText = `Het is geen ${messageStatus}!`;
-            // Plays sound if player gives a wrong answer
-            const wrongAnswer = new Audio('./sounds/wrong_answer.mp3');
-            wrongAnswer.play();
         }
         this.timeout(4000).then(() => {
             document.getElementById("myModal").style.display = "none";
